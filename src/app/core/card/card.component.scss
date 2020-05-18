@@ -1,0 +1,35 @@
+.card,
+.footer {
+  background: none;
+  border: 0;
+}
+
+img {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.container-vote {
+  background-color: green;
+  top: 24px;
+  left: 21px;
+  border-radius: 12px;
+  color: white;
+}
+
+.footer {
+
+  .title {
+    font-size: 1.2rem;
+    color: #e4f7ff;
+  }
+
+  .sub-title {
+    font-size: 0.8rem;
+    color: #9bcadd;
+  }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
