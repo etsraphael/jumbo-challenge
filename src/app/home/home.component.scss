@@ -13,3 +13,26 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.footer-header {
+
+    bottom: 3rem;
+
+    .container-search-bar {
+        background-color: white;
+        border-radius: 35px;
+        overflow: hidden;
+
+        img {
+            width: 32px;
+        }
+    }
+
+    .input-search {
+        font-size: 1.2rem;
+        border: none;
+        outline: none;
+        color: grey;
+    }
+}
+
