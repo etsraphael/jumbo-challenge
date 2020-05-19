@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { MoviesListStoreModule } from './moviesList'
 import { EffectsModule } from '@ngrx/effects'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools'
+import { environment } from 'src/environments/environment'
 
 
 @NgModule({
@@ -12,7 +14,8 @@ import { EffectsModule } from '@ngrx/effects'
     CommonModule,
     MoviesListStoreModule,
     StoreModule.forRoot({}), 
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
 })
 

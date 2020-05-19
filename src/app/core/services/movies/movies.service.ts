@@ -16,12 +16,6 @@ export class MoviesService {
   constructor(private http: HttpClient) { }
 
   getMostPopularMovies(page: number): Observable<ListMoviesReponse>  {
-
-
-    console.log('https://api.themoviedb.org/3/movie/popular?api_key=34779439fe13fdbad3e23afe5bdcb9f0&language=en-US&page=1')
-    console.log(`${this.baseUrl}/popular?api_key=${this.token}&language=en-US&page=${page}`)
-
-
     return this.http.get<ListMoviesReponse>(`${this.baseUrl}/movie/popular?api_key=${this.token}&language=en-US&page=${page}`);
   }
 }
