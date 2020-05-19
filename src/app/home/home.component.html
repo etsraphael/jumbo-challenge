@@ -1,5 +1,4 @@
 <div class="main-container h-100">
-
   <!-- header -->
   <div class="container-header position-relative">
     <div class="row position-absolute footer-header w-100">
@@ -14,8 +13,6 @@
       </div>
     </div>
   </div>
-
-
   <!-- list of searching movie -->
   <div class="container" *ngIf="inputSearch.value.length > 2">
     <div class="row container-title pl-4 header-title my-4">
@@ -25,11 +22,9 @@
       <div class="row" *ngIf="(Searchmovies$|async); let movies">
         <!-- <app-card class="col-6 col-sm-3 col-md-3" *ngFor="let item of movies" [movie]="item"></app-card> -->
         <app-card class="col-6 col-sm-3 col-md-3" *ngFor="let item of movies" [movie]="item"></app-card>
-
       </div>
     </div>
   </div>
-
   <!-- list of popular movies -->
   <div class="container" *ngIf="(movies$|async); let movies">
     <div class="row container-title pl-4 header-title my-4">
@@ -41,5 +36,4 @@
       </div>
     </div>
   </div>
-
 </div>

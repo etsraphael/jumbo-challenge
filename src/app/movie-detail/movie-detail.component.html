@@ -1,5 +1,4 @@
 <div class="main-container h-100" *ngIf="(movie$|async) ; let movie">
-
   <!-- Header -->
   <div class="containter-header row mx-0">
     <div class="position-absolute container-btn pt-5 pl-5" [routerLink]="['../../']">
@@ -7,7 +6,6 @@
     </div>
     <img class="w-100 h-100" src="https://images.unsplash.com/photo-1589808710416-24cf7ac026f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="cover_picture">
   </div>
-
   <!-- Sub - Header -->
   <div class="row mx-0 sub-header">
     <div class="col-md-8 col mx-auto">
@@ -34,31 +32,19 @@
       </div>
     </div>
   </div>
-
-
-
   <!-- Body -->
   <div class="container container-body">
-
-
     <!-- Separator -->
     <div class="row">
       <hr class="col-7">
     </div>
-
     <!-- Title -->
     <div class="row">
       <span class="title col-10 col-md-7 mx-auto mb-4">Overview</span>
     </div>
-
     <!-- Description -->
     <div class="row">
       <span class="col-10 col-md-7 mx-auto">{{movie.overview}}</span>
     </div>
-
-
   </div>
-
-
-
 </div>

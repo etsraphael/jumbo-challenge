@@ -9,9 +9,20 @@ import { Movies } from '../../services/movies/movies.service';
 export class CardComponent implements OnInit {
 
   @Input() movie: Movies
-  
+
   constructor() { }
 
   ngOnInit() { }
+
+
+  getColorBackground(x: Number) {
+
+    switch (true) {
+      case (x < 3): return 'red'
+      case (x <= 5): return 'orange'
+      case (x <= 10): return 'green'
+    }
+
+  }
 
 }
