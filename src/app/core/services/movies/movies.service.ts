@@ -22,6 +22,10 @@ export class MoviesService {
     return this.http.get<Movie>(`${this.baseUrl}/movie/${id}?api_key=${this.token}&language=en-US`);
   }
 
+  searchMovie(name: string): Observable<ListMoviesReponse> {
+    return this.http.get<ListMoviesReponse>(`${this.baseUrl}/search/movie?api_key=${this.token}&language=en-US&query=${name}`);
+  }
+
 }
 
 export class ListMoviesReponse {

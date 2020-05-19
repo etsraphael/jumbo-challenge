@@ -4,11 +4,11 @@ import { featureAdapter, initialState, State } from './state';
 export function featureReducer(state = initialState, action: ActionsSearchingList): State {
   switch (action.type) {
     case ActionTypes.GET_SEARCHING_MOVIE: {
-      return {
+      return featureAdapter.setAll(action.payload, {
         ...state,
-        isLoading: true,
+        isLoading: false,
         error: null
-      }
+      })
     }
     case ActionTypes.RESET_SEARCHING_MOVIES: return initialState
     default: return state

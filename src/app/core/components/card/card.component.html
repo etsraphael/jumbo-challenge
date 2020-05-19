@@ -1,6 +1,19 @@
 <div class="card my-2">
   <div class="body" [routerLink]="['../movies/' + movie.id]">
-    <img class="w-100 cursor-pointer" [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="poster-image">
+    <img *ngIf="!!movie.poster_path" class="w-100 cursor-pointer"
+      [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="poster-image">
+    <div *ngIf="!movie.poster_path" class="img-not-found">
+
+      <div class="container h-100">
+        
+        <div class="row my-auto h-100">
+          <span class="m-auto"> Image not available </span>
+        </div>
+
+
+      </div>
+
+    </div>
     <div class="container-vote position-absolute px-2 py-1">
       <span>{{movie.vote_average}}/10</span>
     </div>
