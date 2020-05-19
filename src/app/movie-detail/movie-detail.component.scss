@@ -4,6 +4,21 @@
   img {
     object-fit: cover;
   }
+
+
+  .container-btn {
+
+    img {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      cursor: pointer;
+    }
+
+  }
+
+  .container-btn {
+    outline: 0;
+  }
 }
 
 .sub-header {
