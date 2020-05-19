@@ -5,7 +5,6 @@
     object-fit: cover;
   }
 
-
   .container-btn {
 
     img {
@@ -20,6 +19,27 @@
     outline: 0;
   }
 }
+
+
+.img-not-found {
+  background-color: #ffffff7d;
+  height: 22rem;
+
+  span {
+    color: white;
+    font-size: 1.2rem;
+  }
+}
+
+.img-not-found {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+
+
+
+
 
 .sub-header {
   top: -9rem;
