@@ -5,7 +5,12 @@
     <div class="row position-absolute footer-header w-100">
       <div class="col-8 col-md-7 mx-auto container-search-bar py-3 px-2">
         <div class="row">
-          <input type="text" placeholder="Search" class="pl-5 input-search w-100 col-9 col-md-10">
+          <input 
+          type="text"
+           placeholder="Search"
+            class="pl-5 input-search w-100 col-9 col-md-10"
+            [formControl]="searchField"
+            >
           <div class="col-3 col-md-2 d-flex justify-content-center">
             <img src="../../assets/img/icons8-search-50.png" alt="icon_search">
           </div>

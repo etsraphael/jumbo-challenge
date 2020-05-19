@@ -8,6 +8,7 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { CardComponent } from './core/components/card/card.component';
 import { RootStoreModule } from './root-store';
 import { CoreModule } from './core/services/core.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { CoreModule } from './core/services/core.module';
     BrowserModule,
     AppRoutingModule,
     RootStoreModule,
-    CoreModule
+    CoreModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
