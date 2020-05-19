@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment'
 
 import { MovieStoreModule } from './movieDetail'
 import { MoviesListStoreModule } from './moviesList'
+import { SearchingListStoreModule } from './searchingList'
 
 @NgModule({
   declarations: [],
@@ -14,6 +15,7 @@ import { MoviesListStoreModule } from './moviesList'
   imports: [
     CommonModule,
     MoviesListStoreModule,
+    SearchingListStoreModule,
     MovieStoreModule,
     StoreModule.forRoot({}), 
     EffectsModule.forRoot([]),

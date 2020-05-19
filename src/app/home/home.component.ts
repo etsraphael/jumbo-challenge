@@ -31,7 +31,6 @@ export class HomeComponent implements OnInit {
 
     this.store$.dispatch(new MoviesListStoreActions.GetPopularMovie(1))
 
-
     this.movies$ = this.store$.pipe(
       select(MoviesListStoreSelectors.selectAllItems),
       filter(value => value !== undefined),
