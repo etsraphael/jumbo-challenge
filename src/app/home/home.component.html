@@ -16,11 +16,13 @@
   <!-- list of searching movie -->
   <div class="container" *ngIf="inputSearch.value.length > 2">
     <div class="row container-title pl-4 header-title my-4">
-      <span class="span-title">Movies Results</span>
+      <span class="span-title">Movies Results </span>
+      <span class="pl-4" *ngIf="(Searchmovies$|async)?.length == 0">
+        (No results)
+      </span>
     </div>
     <div class="container">
       <div class="row" *ngIf="(Searchmovies$|async); let movies">
-        <!-- <app-card class="col-6 col-sm-3 col-md-3" *ngFor="let item of movies" [movie]="item"></app-card> -->
         <app-card class="col-6 col-sm-3 col-md-3" *ngFor="let item of movies" [movie]="item"></app-card>
       </div>
     </div>

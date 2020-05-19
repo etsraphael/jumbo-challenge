@@ -48,7 +48,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.Searchmovies$ = this.store$.pipe(
       select(SearchingListStoreSelectors.selectAllItems),
       filter(value => value !== undefined),
-      skipWhile(val => val.length == 0)
     )
 
     this.Searchmovies$.subscribe(console.log)

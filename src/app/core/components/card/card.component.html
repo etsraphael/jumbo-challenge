@@ -1,4 +1,5 @@
 <div class="card my-2">
+  <!-- Body -->
   <div class="body" [routerLink]="['../movies/' + movie.id]">
     <img *ngIf="!!movie.poster_path" class="w-100 cursor-pointer"
       [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="poster-image">
@@ -14,6 +15,7 @@
       <span>{{movie.vote_average}}/10</span>
     </div>
   </div>
+   <!-- Footer -->
   <div class="footer">
     <div class="container">
       <div class="row mx-0 my-1" [routerLink]="['../movies/' + movie.id]">
