@@ -1,8 +1,6 @@
 <div class="card my-2">
   <div class="body" [routerLink]="['../movies/' + movie.id]">
-    <img class="w-100 cursor-pointer"
-      [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path"
-      alt="poster-image">
+    <img class="w-100 cursor-pointer" [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="poster-image">
     <div class="container-vote position-absolute px-2 py-1">
       <span>{{movie.vote_average}}/10</span>
     </div>
@@ -17,4 +15,4 @@
       </div>
     </div>
   </div>
-</div>
+</div>q
