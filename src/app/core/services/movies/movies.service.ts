@@ -3,21 +3,25 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
 
 export class MoviesService {
- 
+
   token = environment.api_token
   baseUrl = environment.baseUrl
-  
+
   constructor(private http: HttpClient) { }
 
-  getMostPopularMovies(page: number): Observable<ListMoviesReponse>  {
+  getMostPopularMovies(page: number): Observable<ListMoviesReponse> {
     return this.http.get<ListMoviesReponse>(`${this.baseUrl}/movie/popular?api_key=${this.token}&language=en-US&page=${page}`);
   }
+
+  getMovieDetail(id: string): Observable<Movie> {
+    return this.http.get<Movie>(`${this.baseUrl}/movie/${id}?api_key=${this.token}&language=en-US`);
+  }
+
 }
 
 export class ListMoviesReponse {
@@ -34,12 +38,32 @@ export class Movies {
   poster_path: string
   id: string
   adult: boolean
-  backdrop_path:string
+  backdrop_path: string
   original_language: string
   original_title: string
-  genre_ids: [ number, number ]
+  genre_ids: [number, number]
   title: string
   vote_average: number
   overview: string
   release_date: Date
+}
+
+export class Movie {
+  adult: boolean
+  backdrop_path: string
+  belongs_to_collection: string
+  budget: number
+  homepage: string
+  id: string
+  imdb_id: string
+  original_language: string
+  original_title: string
+  overview: string
+  popularity: number
+  poster_path: string
+  status: string
+  tagline: string
+  video: boolean
+  vote_average: number
+  vote_count: number
 }
