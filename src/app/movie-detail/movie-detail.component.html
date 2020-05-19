@@ -1,10 +1,8 @@
-<div class="main-container h-100">
+<div class="main-container h-100" *ngIf="(movie$|async) ; let movie">
 
   <!-- Header -->
   <div class="containter-header row mx-0">
-    <img class="w-100 h-100"
-      src="https://images.unsplash.com/photo-1589808710416-24cf7ac026f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
-      alt="cover_picture">
+    <img class="w-100 h-100" src="https://images.unsplash.com/photo-1589808710416-24cf7ac026f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="cover_picture">
   </div>
 
   <!-- Sub - Header -->
@@ -12,15 +10,13 @@
     <div class="col-md-7 col mx-auto">
       <div class="row mx-0">
         <div class="col-6 d-flex justify-content-end">
-          <img
-            src="https://images.unsplash.com/photo-1589803196988-17b417281773?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-            alt="profile_picture">
+          <img [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path" alt="profile_picture">
         </div>
         <div class="col-6">
           <div class="container h-100">
             <div class="container position-absolute info-sub-header">
-              <span class="row mx-0 title">Bohemian Rhapsody</span>
-              <span class="row mx-0">2018 • 82% User Score</span>
+              <span class="row mx-0 title">{{movie.title}}</span>
+              <span class="row mx-0">{{movie.release_date| date}} • {{movie.vote_average}}/10 User Rang</span>
               <span class="row mx-0">2h15min</span>
             </div>
           </div>
@@ -42,17 +38,12 @@
 
     <!-- Title -->
     <div class="row">
-      <span class="title col-10 col-md-8 mx-auto mb-4">Overview</span>
+      <span class="title col-10 col-md-7 mx-auto mb-4">Overview</span>
     </div>
 
     <!-- Description -->
     <div class="row">
-      <span class="col-10 col-md-8 mx-auto">The near future, a time when both hope and hardships drive humanity to look to the
-        stars and beyond. While a
-        mysterious phenomenon menaces to destroy life on planet Earth, astronaut Roy McBride undertakes a mission across
-        the immensity of space and its many perils to uncover the truth about a lost expedition that decades before
-        boldly
-        faced emptiness and silence in search of the unknown.</span>
+      <span class="col-10 col-md-7 mx-auto">{{movie.overview}}</span>
     </div>
 
 

@@ -1,15 +1,41 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Movie } from '../core/services/movies/movies.service';
+import { Store, select } from '@ngrx/store';
+import { RootStoreState, MovieStoreActions, MovieStoreSelectors } from '../root-store';
+import { ActivatedRoute } from '@angular/router';
+import { filter, skipWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
   styleUrls: ['./movie-detail.component.scss']
 })
+
 export class MovieDetailComponent implements OnInit {
 
-  constructor() { }
+  // movies
+  movie$: Observable<Movie>
+  error$: Observable<any>
+  loading$: Observable<boolean>
+
+  constructor(
+    private store$: Store<RootStoreState.State>,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
+
+    // download the movie detail
+    this.store$.dispatch(new MovieStoreActions.GetMovieDetail(this.route.snapshot.paramMap.get('id')))
+
+    // select the movie
+    this.movie$ = this.store$.pipe(
+      select(MovieStoreSelectors.select),
+      filter(value => value !== undefined),
+      skipWhile(val => val == null)
+    )
+
   }
 
 }
