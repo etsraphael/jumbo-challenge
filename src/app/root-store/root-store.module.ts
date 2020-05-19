@@ -2,6 +2,7 @@ import { StoreModule } from '@ngrx/store'
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { MoviesListStoreModule } from './moviesList'
+import { EffectsModule } from '@ngrx/effects'
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { MoviesListStoreModule } from './moviesList'
   imports: [
     CommonModule,
     MoviesListStoreModule,
-    StoreModule.forRoot({})
+    StoreModule.forRoot({}), 
+    EffectsModule.forRoot([])
   ],
 })
 
