@@ -5,16 +5,16 @@
       alt="poster-image">
 
     <div class="container-vote position-absolute px-2 py-1">
-      <span>50%</span>
+      <span>{{movie.vote_average}}/10</span>
     </div>
   </div>
   <div class="footer">
     <div class="container">
       <div class="row mx-0 my-1">
-        <span class="title cursor-pointer">Avengers Infinity War</span>
+        <span class="title cursor-pointer">{{movie.title}}</span>
       </div>
       <div class="row mx-0 my-1">
-        <span class="sub-title">April 2018</span>
+        <span class="sub-title">{{movie.release_date | date}}</span>
       </div>
     </div>
   </div>
