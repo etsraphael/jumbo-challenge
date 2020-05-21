@@ -16,8 +16,10 @@
   <!-- list of searching movie -->
   <div class="container" *ngIf="inputSearch.value.length > 2">
     <div class="row container-title pl-4 header-title my-4">
-      <span class="span-title">Movies</span>
-      <span class="pl-4" *ngIf="(Searchmovies$|async)?.length == 0">
+      <span class="span-title" *ngIf="(Searchmovies$|async)?.length !== 0">
+        Movies
+      </span>
+      <span class="mx-auto" *ngIf="(Searchmovies$|async)?.length == 0">
         (No results found)
       </span>
     </div>

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api_token: '34779439fe13fdbad3e23afe5bdcb9f0',
+  api_token: '6ed12e064b90ae1290fa326ce9e790ff',
   baseUrl: 'https://api.themoviedb.org/3'
 };
 
